@@ -1,76 +1,70 @@
-# Lista de Tarefas - Cliente Desktop (JavaFX)
+<h1 align="center">Lista de Tarefas - Aplicação Desktop</h1>
+<p align="center">Cliente Desktop para o sistema de gerenciamento de tarefas (To-Do List), desenvolvido com JavaFX.</p>
 
-Este é o cliente Desktop para o projeto Full-Stack "Lista de Tarefas". A aplicação foi desenvolvida em Java com o framework JavaFX, criando uma interface nativa que consome a mesma API REST utilizada pelo [cliente Web (Angular)](https://github.com/RafaelSilvaGomes/lista-tarefas-web.git).
+<p align="center">
+  <img src="https://img.shields.io/badge/JavaFX-21-orange?style=for-the-badge&logo=openjfx" alt="JavaFX 21">
+  <img src="https://img.shields.io/badge/Java-21-blue?style=for-the-badge&logo=java" alt="Java 21">
+  <img src="https://img.shields.io/badge/Maven-4-red?style=for-the-badge&logo=apache-maven" alt="Maven">
+</p>
 
-## Arquitetura do Projeto
+<details>
+  <summary><strong>📝 Sobre o Projeto</strong></summary>
+  <br>
+  Esta é a aplicação cliente de Desktop para o sistema "Lista de Tarefas". Ela oferece uma experiência nativa para o usuário, consumindo a mesma API REST que a versão web, permitindo o gerenciamento de tarefas diretamente do computador.
 
-O sistema completo é dividido em três partes que se comunicam de forma desacoplada
+  O projeto foi desenvolvido seguindo o tutorial "Projeto Aplicação Full Stack" do professor Ricardo Tec.
+</details>
 
-Este repositório (`lista-tarefas-desktop`) contém o código-fonte apenas do **Cliente Desktop**.
+## 🏛️ Arquitetura da Solução
 
-## Pré-requisitos
+Este projeto corresponde à aplicação Desktop da solução "Lista de Tarefas". A arquitetura completa é modularizada em três repositórios independentes.
 
-Para compilar e executar esta aplicação, você precisará ter o seguinte software instalado:
+* **Desktop (Esta Aplicação):** Cliente Desktop desenvolvido com JavaFX.
+* **Backend (API REST):** API RESTful desenvolvida com Spring Boot que serve como o núcleo da aplicação.
+    * ➡️ **Link para o repositório:** `https://github.com/ZagoGiovanni/Projeto-Java-Spring-API`
+* **Frontend (Web):** Interface web desenvolvida com Angular.
+    * ➡️ **Link para o repositório:** `https://github.com/ZagoGiovanni/Projeto-Java-Spring-Web`
 
-* **Java Development Kit (JDK)**: Versão **17** ou superior.
-    * *Recomendação:* [Adoptium OpenJDK 17](https://adoptium.net/).
-* **Apache Maven**: Ferramenta de automação de build.
-    * *Nota:* IDEs como o IntelliJ IDEA já vêm com uma versão embutida.
-* **IDE Java**:
-    * *Recomendação:* [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/).
-* **Scene Builder**: Ferramenta para visualizar e editar os arquivos `.fxml` da interface.
-    * *Recomendação:* [Gluon Scene Builder para Java 17+](https://gluonhq.com/products/scene-builder/).
-* **Git**: Para clonar o repositório.
+## 💻 Tecnologias Utilizadas
 
-**⚠️ Importante:** Para que o cliente desktop funcione, a **[API do backend (`lista-tarefas-api`)](https://github.com/RafaelSilvaGomes/lista-tarefas-api) precisa estar em execução**.
+- **JavaFX 21**
+- **Java 21**
+- **Maven**
+- **Scene Builder** (para a interface gráfica)
 
-## Como Executar o Projeto
+## 🚀 Como Executar o Projeto
 
-Siga os passos abaixo para rodar a aplicação desktop.
+### Pré-requisitos
 
-#### 1. Clonar o Repositório Completo
-Se você ainda não o fez, clone o repositório principal que contém os três projetos.
+Antes de começar, você vai precisar ter instalado em sua máquina:
+* [Java (JDK)](https://www.oracle.com/java/technologies/downloads/) - Versão 21 ou superior.
+* [JavaFX SDK](https://gluonhq.com/products/javafx/) - Configurado em sua IDE.
+* [Maven](https://maven.apache.org/download.cgi) - Versão 3.8 ou superior.
+* [Git](https://git-scm.com/downloads).
+* **A API REST precisa estar em execução** para que o cliente desktop funcione.
 
-```bash
-git clone https://github.com/RafaelSilvaGomes/lista-tarefas-desktop.git
-```
+### Rodando a Aplicação
 
-#### 2. Iniciar o Backend (API)
-Esta é a etapa mais crucial. O cliente desktop precisa da API para buscar e salvar os dados.
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/seu-usuario/lista-tarefas-desktop.git](https://github.com/seu-usuario/lista-tarefas-desktop.git)
+    ```
 
-1.  Abra o projeto `lista-tarefas-api` na sua IDE.
-2.  Aguarde a IDE baixar todas as dependências do Maven.
-3.  Encontre a classe principal (`ListaTarefasApiApplication.java`) e execute-a.
-4.  Verifique se o servidor subiu corretamente, na porta `8080`.
+2.  **Navegue até a pasta do projeto:**
+    ```bash
+    cd lista-tarefas-desktop
+    ```
 
-#### 3. Abrir e Executar o Projeto Desktop
+3.  **Execute a aplicação via Maven:**
+    ```bash
+    mvn javafx:run
+    ```
 
-1.  Na sua IDE (IntelliJ IDEA), abra o projeto `lista-tarefas-desktop` como um novo projeto.
-    * Vá em `File` -> `Open...` e selecione a pasta `lista-tarefas-desktop`.
-2.  Aguarde a IDE reconhecer o projeto Maven e baixar as dependências declaradas no `pom.xml`. Se necessário, clique no ícone "Reload All Maven Projects".
-3.  Execute a aplicação:
-    * Navegue até `src/main/java/br/com/curso/listadetarefas/desktop/`.
-    * Encontre a classe `MainApp.java`.
-    * Clique com o botão direito sobre ela e selecione **`Run 'MainApp.main()'`**.
+4.  Alternativamente, importe o projeto em sua IDE preferida (IntelliJ, Eclipse) e execute a classe principal.
 
-A janela da aplicação desktop deve aparecer e, após alguns instantes, carregar as tarefas da API.
+## Autor
 
-## Funcionalidades
+**Giovanni dos Santos Zago**
 
-O cliente desktop implementa o CRUD completo de tarefas:
-
-* **Listar Tarefas**: Visualiza todas as tarefas existentes.
-*  **Adicionar Tarefas**: Cria novas tarefas.
-*  **Atualizar Tarefas**:
-    * Marca tarefas como concluídas através de um checkbox.
-    * Edita a descrição de uma tarefa com um duplo clique na célula.
-*  **Deletar Tarefas**: Remove tarefas da lista.
-*  **Sincronização Manual**: Um botão "Atualizar" busca os dados mais recentes do servidor, refletindo mudanças feitas por outros clientes (como a versão web).
-
-## Tecnologias Utilizadas
-
-* **Java 17**
-* **JavaFX 17**: Framework para a construção da interface gráfica.
-* **Maven**: Gerenciador de dependências e build do projeto.
-* **Jackson Databind**: Biblioteca para conversão de objetos Java para JSON e vice-versa.
-* **Scene Builder**: Ferramenta visual para design da interface FXML.
+- LinkedIn: `https://www.linkedin.com/in/giovanni-zago-058891290/`
+- GitHub: `https://github.com/ZagoGiovanni`
