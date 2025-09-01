@@ -47,7 +47,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/seu-usuario/lista-tarefas-desktop.git](https://github.com/seu-usuario/lista-tarefas-desktop.git)
+    git clone [https://github.com/ZagoGiovanni/Projeto-Java-Spring-Desktop.git]
     ```
 
 2.  **Navegue até a pasta do projeto:**
